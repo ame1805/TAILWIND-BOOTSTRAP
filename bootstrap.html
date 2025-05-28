@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo de Componentes Bootstrap</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Tema personalizado con CSS variables -->
+  <style>
+    :root {
+      --bs-primary: #ff5733;
+      --bs-body-bg: #f8f9fa;
+      --bs-font-sans-serif: 'Arial', sans-serif;
+    }
+    body {
+      background-color: var(--bs-body-bg);
+      font-family: var(--bs-font-sans-serif);
+    }
+    .hero {
+      background-color: var(--bs-primary);
+      color: #fff;
+      padding: 4rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">AgroTech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cards">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero text-center">
+    <div class="container">
+      <h1 class="display-4">Soluciones Innovadoras para la Agricultura</h1>
+      <p class="lead">Tecnología de drones y análisis de datos para optimizar tu producción.</p>
+      <button class="btn btn-outline-light btn-lg shadow mt-3" data-bs-toggle="modal" data-bs-target="#infoModal">
+        Más Información
+      </button>
+    </div>
+  </section>
+
+  <!-- Alerts -->
+  <div class="container mt-5">
+    <div class="alert alert-success rounded shadow" role="alert">
+      🚀 ¡Lanzamiento exitoso de la nueva funcionalidad de análisis de suelos!
+    </div>
+    <div class="alert alert-danger rounded shadow" role="alert">
+      ⚠️ Atención: Programación de mantenimiento el próximo sábado.
+    </div>
+  </div>
+
+  <!-- Services Cards -->
+  <section id="cards" class="container mt-5">
+    <h2 class="text-center mb-4">Nuestros Servicios</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow rounded h-100">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Dron spraying">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Rociado de Cultivos</h5>
+            <p class="card-text flex-grow-1">Drones equipados para aplicar fertilizantes y plaguicidas con precisión milimétrica.</p>
+            <button class="btn btn-primary mt-3">Contratar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow rounded h-100">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Data analytics">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Análisis de Datos</h5>
+            <p class="card-text flex-grow-1">Informes en tiempo real sobre salud de cultivos y uso de recursos.</p>
+            <button class="btn btn-outline-secondary mt-3">Ver Detalles</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow rounded h-100">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Monitoring">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Monitoreo Remoto</h5>
+            <p class="card-text flex-grow-1">Seguimiento continuo de cultivos con cámaras multiespectrales.</p>
+            <button class="btn btn-primary mt-3">Solicitar Demo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container mt-5 mb-5">
+    <h2 class="text-center mb-4">Contáctanos</h2>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" placeholder="Tu nombre">
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com">
+      </div>
+      <div class="col-12">
+        <label for="message" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="message" rows="4"></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Modal Informativo -->
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content rounded shadow">
+        <div class="modal-header">
+          <h5 class="modal-title" id="infoModalLabel">Información de Productos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Nuestros drones utilizan sensores de última generación para recopilar datos precisos sobre tus cultivos. Ofrecemos planes personalizados según la extensión y necesidades de tu terreno.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
